@@ -1,4 +1,5 @@
 import sys
+
 sys.path.append('../')
 import logging
 import logging.handlers
@@ -15,7 +16,7 @@ path = os.path.join(path, 'server.log')
 # создаём потоки вывода логов
 steam = logging.StreamHandler(sys.stderr)
 steam.setFormatter(server_formatter)
-steam.setLevel(logging.DEBUG)
+steam.setLevel(logging.INFO)
 log_file = logging.handlers.TimedRotatingFileHandler(path, encoding='utf8', interval=1, when='D')
 log_file.setFormatter(server_formatter)
 
