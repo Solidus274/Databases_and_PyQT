@@ -1,5 +1,4 @@
 import sys
-
 sys.path.append('../')
 from client import create_presence, process_response_ans
 from common.variables import *
@@ -21,7 +20,7 @@ class TestClass(unittest.TestCase):
 
     # тест корректного разбора 400
     def test_400_ans(self):
-        self.assertRaises(ServerError, process_response_ans, {RESPONSE: 400, ERROR: 'Bad Request'})
+        self.assertRaises(ServerError, process_response_ans , {RESPONSE: 400, ERROR: 'Bad Request'})
 
     # тест исключения без поля RESPONSE
     def test_no_response(self):
